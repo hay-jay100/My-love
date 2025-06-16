@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Will You Be My Girlfriend? 💘</title>
+  <style>
+    body {
+      background: #fff0f5;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2rem;
+      color: #d10068;
+    }
+    .buttons {
+      margin-top: 30px;
+    }
+    button {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    #yesBtn {
+      background-color: #28a745;
+      color: white;
+    }
+    #noBtn {
+      background-color: #dc3545;
+      color: white;
+    }
+    #response {
+      margin-top: 30px;
+      font-size: 1.5rem;
+      color: #d10068;
+      display: none;
+    }
+    #whatsappBtn {
+      display: none;
+      margin-top: 20px;
+      padding: 1rem 2rem;
+      background-color: #25D366;
+      color: white;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Will you be my girlfriend? 💖</h1>
+
+  <div class="buttons">
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn">No</button>
+  </div>
+
+  <p id="response">I knew it 😘 You’re mine now 💍</p>
+  <a id="whatsappBtn" href="https://wa.link/zwkpcn" target="_blank">Message Me On WhatsApp 💬</a>
+
+  <script>
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+    const response = document.getElementById("response");
+    const whatsappBtn = document.getElementById("whatsappBtn");
+
+    let yesSize = 1;
+    let noSize = 1;
+
+    noBtn.addEventListener("click", () => {
+      // Grow Yes button
+      yesSize += 0.3;
+      yesBtn.style.transform = `scale(${yesSize})`;
+
+      // Shrink No button
+      noSize -= 0.2;
+      if (noSize <= 0.1) {
+        noBtn.style.display = "none";
+      } else {
+        noBtn.style.transform = `scale(${noSize})`;
+      }
+    });
+
+    yesBtn.addEventListener("click", () => {
+      response.style.display = "block";
+      whatsappBtn.style.display = "inline-block";
+    });
+  </script>
+
+</body>
+</html>
